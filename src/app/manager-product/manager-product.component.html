@@ -1,0 +1,29 @@
+ <table   class="table table-bordered ">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let product of products" >
+         <tr >
+          <th>{{product.id}}</th>
+          <th>{{product.name}}</th>
+          <th>{{product.desc}}</th>
+          <th>{{product.price}}</th>
+          <th>{{product.status}}</th>
+          <th>
+             <button (click)="detailProduct(product)" class="btn btn-success mr-3">Chi tiết</button>
+             <button (click)="removeItem(product.id)" class="btn btn-danger">Delete</button>
+          </th>
+        </tr>
+      </tbody>
+      
+</table>
+  <div *ngIf="selected" class="alert alert-info">
+    {{selected.name}}
+  </div>
